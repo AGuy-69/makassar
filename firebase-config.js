@@ -1,11 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyDeBZpZzCD1ukBccn8DLTISFBDYLFSCvYs",
-    authDomain: "playdots-store.firebaseapp.com",
-    databaseURL: "https://playdots-store-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "playdots-store",
-    storageBucket: "playdots-store.firebasestorage.app",
-    messagingSenderId: "341188836175",
-    appId: "1:341188836175:web:93e2983764a1cbfe54e33a",
-    measurementId: "G-VXG257RTTZ"
-  };
-  
+  apiKey: "AIzaSyAFIScFUp9VPn9tHoFgKPSjnOGLbQqCR9E",
+  authDomain: "makassar-6f937.firebaseapp.com",
+  databaseURL: "https://makassar-6f937-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "makassar-6f937",
+  storageBucket: "makassar-6f937.firebasestorage.app",
+  messagingSenderId: "33328633171",
+  appId: "1:33328633171:web:3566857fd244584dfe3da6",
+  measurementId: "G-XNQ40TVBXR"
+};
