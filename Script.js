@@ -9,7 +9,7 @@
     callback(); // call the passed-in function
   }
 
-  function printYouorCart() {
+  function printYourCart() {
     const printContents = document.getElementById('youorcart').innerHTML;
     const originalContents = document.body.innerHTML;
 
