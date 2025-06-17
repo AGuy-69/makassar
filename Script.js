@@ -5,6 +5,21 @@
   const provider = new firebase.auth.GoogleAuthProvider();
   console.log("script loaded")
 
+  function logsales(name, quantity, price){
+    // Add a new sales log entry
+    db.collection("sales_logs").add({
+      productName: name,
+      quantity: quantity,
+      price: price,
+      total: price * quantity,
+      date: firebase.firestore.Timestamp.now()
+    })
+    .then(docRef => {
+      console.log("Sales log added with ID:", docRef.id);
+    })
+    .catch(error => {
+      console.error("Error adding document:", error);
+    });
 
   
   function checkLoginInfo(callback) { 
