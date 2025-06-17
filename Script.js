@@ -61,12 +61,7 @@
   ];
   
   function checkLoginInfo(callback) { 
-    if (allowedEmails.includes(userInfo.email)) {
-      callback(); // call the passed-in function
-    } else {
-      const randomIndex = Math.floor(Math.random() * deniedMessages.length);
-      alert(deniedMessages[randomIndex]);
-    }
+    callback(); // call the passed-in function
   }
 
   function openAdmin() {
