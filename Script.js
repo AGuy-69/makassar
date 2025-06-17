@@ -290,7 +290,7 @@
 
   function checkout(){
     cart.forEach((item, i) => {
-      logSales(item.name, item.qty, item.price);
+      logsales(item.name, item.qty, item.price);
     });
     document.getElementById('Qris').style.display = 'flex';
     
