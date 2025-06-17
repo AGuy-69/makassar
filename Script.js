@@ -184,13 +184,13 @@
   function renderCart() {
     const cont = document.getElementById('cartContainer');
     cont.innerHTML = ''; // Clear current cart items
-  
+
     if (cart.length > 0) {
       cont.parentElement.querySelector('.cart').classList.add('shrink');
     } else {
       cont.parentElement.querySelector('.cart').classList.remove('shrink');
     }
-  
+
     // Loop through each item in the cart and display it
     cart.forEach((item, i) => {
       const d = document.createElement('div');
@@ -202,11 +202,22 @@
         <span style="width: 5%; text-align: center;"><button onclick="changeQty(${i},+1)">+</button></span>
         <span style="width: 5%; text-align: center;"><button onclick="removeCart(${i})">✕</button></span>
       `;
-      cont.appendChild(d); // Append the new cart item under the previous ones
+      cont.appendChild(d);
     });
-  
+
     updateTotals(); // Update the totals after rendering
-  }  
+
+    // TEXT-ONLY VERSION AT BOTTOM
+    const textSummaryContainer = document.getElementById('cartTextSummary');
+    if (textSummaryContainer) {
+      let summaryText = '';
+      cart.forEach((item) => {
+        summaryText += `${item.name} x ${item.qty} = Rp ${(item.price * item.qty).toLocaleString('id-ID')}\n`;
+      });
+      textSummaryContainer.textContent = summaryText.trim(); // Insert plain text
+    }
+  }
+
 
   function updateTotals(){
     const sub = cart.reduce((a,i)=>a + i.price*i.qty, 0);
