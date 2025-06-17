@@ -20,6 +20,7 @@
     .catch(error => {
       console.error("Error adding document:", error);
     });
+  }
 
   
   function checkLoginInfo(callback) { 
