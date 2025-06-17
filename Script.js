@@ -226,16 +226,6 @@
     });
 
     updateTotals(); // Update the totals after rendering
-
-    // TEXT-ONLY VERSION AT BOTTOM
-    const textSummaryContainer = document.getElementById('cartTextSummary');
-    if (textSummaryContainer) {
-      let summaryText = '';
-      cart.forEach((item) => {
-        summaryText += `${item.name} x ${item.qty} = Rp ${(item.price * item.qty).toLocaleString('id-ID')}\n`;
-      });
-      textSummaryContainer.textContent = summaryText.trim(); // Insert plain text
-    }
   }
 
 
