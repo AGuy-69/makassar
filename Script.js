@@ -5,14 +5,7 @@
   const provider = new firebase.auth.GoogleAuthProvider();
   console.log("script loaded")
 
-  function printYourCart() {
-    const printContents = document.getElementById('cartContainer').innerHTML;
-    const originalContents = document.body.innerHTML;
 
-    document.body.innerHTML = printContents;
-    window.print();
-    document.body.innerHTML = originalContents;
-  }
   
   function checkLoginInfo(callback) { 
     callback(); // call the passed-in function
