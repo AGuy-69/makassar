@@ -9,6 +9,15 @@
     callback(); // call the passed-in function
   }
 
+  function printYouorCart() {
+    const printContents = document.getElementById('youorcart').innerHTML;
+    const originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents;
+  }
+
   function openAdmin() {
     document.getElementById('adminPanel').style.display = 'block';
     renderAdminProducts(); // Render admin products list when admin logs in
