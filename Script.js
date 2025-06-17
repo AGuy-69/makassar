@@ -6,7 +6,7 @@
   console.log("script loaded")
 
   function printYourCart() {
-    const printContents = document.getElementById('productsContainer').innerHTML;
+    const printContents = document.getElementById('cartContainer').innerHTML;
     const originalContents = document.body.innerHTML;
 
     document.body.innerHTML = printContents;
