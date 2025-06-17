@@ -3,22 +3,24 @@
   const app = firebase.initializeApp(firebaseConfig);
   const database = firebase.database();
   const provider = new firebase.auth.GoogleAuthProvider();
+
   console.log("script loaded")
 
-  function logsales(name, quantity, price){
-    // Add a new sales log entry
-    db.collection("sales_logs").add({
+  function logSales(name, quantity, price) {
+    const logId = Date.now(); // Unique ID (timestamp)
+
+    database.ref('sales_logs/' + logId).set({
       productName: name,
       quantity: quantity,
       price: price,
       total: price * quantity,
-      date: firebase.firestore.Timestamp.now()
+      date: new Date().toISOString()
     })
-    .then(docRef => {
-      console.log("Sales log added with ID:", docRef.id);
+    .then(() => {
+      console.log("Sales log saved!");
     })
-    .catch(error => {
-      console.error("Error adding document:", error);
+    .catch((error) => {
+      console.error("Error saving log:", error);
     });
   }
 
