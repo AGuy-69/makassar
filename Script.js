@@ -6,7 +6,7 @@
 
   console.log("script loaded")
 
-  function logSales(name, quantity, price) {
+  function logsales(name, quantity, price) {
     const logId = Date.now(); // Unique ID (timestamp)
 
     database.ref('sales_logs/' + logId).set({
