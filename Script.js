@@ -5,61 +5,6 @@
   const provider = new firebase.auth.GoogleAuthProvider();
   console.log("script loaded")
   
-
-  firebase.auth().signInWithPopup(provider)
-  .then((result) => {
-    console.log("✅ Sign-in successful:", result.user.email);
-  })
-  .catch((error) => {
-    console.error("❌ Sign-in error:", error);
-  });
-
-  //Fetches admin users
-  let userInfo = null;
-  let allowedEmails = [];
-  let cashierEmails = [];
-  fetch("Admins.json").then(res => res.json()).then(data => {allowedEmails = data; console.log("✅ Allowed email list loaded:", allowedEmails);
-  
-
-    // Check login only after email list is loaded
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        // User is signed in
-        userInfo = {
-          name: user.displayName,
-          email: user.email,
-          photoURL: user.photoURL,
-          uid: user.uid
-        };
-    
-        console.log("✅ User is signed in:", userInfo);
-    
-        // Check if the email is allowed
-        if (allowedEmails.includes(userInfo.email)) {
-          console.log("✅ Allowed email:", userInfo.email);
-        } else {
-          console.log("❌ Email not allowed:", userInfo.email);
-          firebase.auth().signOut();
-        }
-    
-      } else {
-        // No user signed in
-        console.log("No user is signed in.");
-      }
-    });
-  })
-  .catch(err => {
-    console.error("❌ Admins.json", err);
-  });
-
-  const deniedMessages = [
-  "You're not an admin, sorry!",
-  "Access denied.",
-  "Nope. Try again.",
-  "Nice try, but you're not on the list.",
-  "Bitch you're not an admin are you?"
-  ];
-  
   function checkLoginInfo(callback) { 
     callback(); // call the passed-in function
   }
