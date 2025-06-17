@@ -198,7 +198,6 @@
       d.innerHTML = `
         <span style="width: 80%;">${item.name} Rp ${item.price.toLocaleString('id-ID')} x ${item.qty} = Rp ${(item.price * item.qty).toLocaleString('id-ID')}</span>
         <span style="width: 5%; text-align: center;"><button onclick="changeQty(${i},-1)">–</button></span>
-        <span style="width: 5%; text-align: center;">${item.qty}</span>
         <span style="width: 5%; text-align: center;"><button onclick="changeQty(${i},+1)">+</button></span>
         <span style="width: 5%; text-align: center;"><button onclick="removeCart(${i})">✕</button></span>
       `;
