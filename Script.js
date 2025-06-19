@@ -287,8 +287,12 @@
     });
     if (method === "QRIS"){
       document.getElementById('Qris').style.display = 'flex';
+      cart = [];          // Clear the cart array
+      renderCart();
     } else {
       alert('Payment recorded')
+      cart = [];          // Clear the cart array
+      renderCart();
     }
   }
 
