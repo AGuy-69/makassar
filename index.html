@@ -330,6 +330,11 @@
       cursor: pointer;
     }    
     
+    .checkoutbtn-container {
+      display: flex;
+      gap: 10px; /* spacing between buttons */
+    }
+    
   </style>
 </head>
 <body>
@@ -361,8 +366,10 @@
           <p>Discount: <span id="discountDisplay">0%</span></p>
           <p>Fee: <span id="feeDisplay">0.00</span></p>
           <h3>Final Total: <span id="finalTotalDisplay">0.00</span></h3>
-          <button class="checkout-btn" onclick="checkout('QRIS')">Checkout QRIS</button>
-          <button class="checkout-btn" onclick="checkout('CASH')">Checkout Cash</button>
+          <div class="checkoutbtn-container">
+            <button class="checkout-btn" onclick="checkout('QRIS')">Checkout QRIS</button>
+            <button class="checkout-btn" onclick="checkout('CASH')">Checkout Cash</button>
+          </div>
       </div>
       <div class="billcalc">
         <h3>Enter Cash to Calculate Change</h3>
