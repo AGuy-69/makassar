@@ -285,7 +285,7 @@
     cart.forEach((item, i) => {
       logsales(method, item.name, item.qty, item.price);
     });
-    if (method == "QRIS"){
+    if (method === "QRIS"){
       document.getElementById('Qris').style.display = 'flex';
     } else {
       alert('Payment recorded')
