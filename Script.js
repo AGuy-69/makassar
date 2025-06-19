@@ -6,10 +6,11 @@
 
   console.log("script loaded")
 
-  function logsales(name, quantity, price) {
+  function logsales(method, name, quantity, price) {
     const logId = Date.now(); // Unique ID (timestamp)
 
     database.ref('sales_logs/' + logId).set({
+      paymentMethod: method,
       productName: name,
       quantity: quantity,
       price: price,
@@ -280,9 +281,9 @@
     cart.splice(i,1); renderCart();
   }
 
-  function checkout(){
+  function checkout(method){
     cart.forEach((item, i) => {
-      logsales(item.name, item.qty, item.price);
+      logsales(method, item.name, item.qty, item.price);
     });
     document.getElementById('Qris').style.display = 'flex';
     
