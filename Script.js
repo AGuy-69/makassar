@@ -289,7 +289,7 @@
       document.getElementById('Qris').style.display = 'flex';
     } else {
       alert('Payment recorded')
-    
+    }
   }
 
   function closeQris(){
